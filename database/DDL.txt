@@ -1,0 +1,28 @@
+CREATE TABLE product
+(
+	id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+	name VARCHAR(50) NOT NULL,
+	description VARCHAR(150) NOT NULL,
+	price FLOAT NOT NULL,
+	discounted BOOLEAN NOT NULL
+);
+
+CREATE TABLE cart
+(
+	id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+	created_at TIMESTAMP NOT NULL,
+	purchase_date TIMESTAMP NOT NULL,
+	purchase_status VARCHAR(50) NOT NULL,
+	total FLOAT
+);
+
+CREATE TABLE cart_product
+(
+	id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+	product_id UUID NOT NULL,
+	cart_id UUID NOT NULL,
+	product_quantity INT NOT NULL,
+	total_product FLOAT NOT NULL,
+	CONSTRAINT fk_product FOREIGN KEY(product_id) REFERENCES product (id),
+	CONSTRAINT fk_cart FOREIGN KEY(cart_id) REFERENCES cart (id)
+);

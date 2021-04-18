@@ -1,0 +1,15 @@
+1.	A product must contain a name, description and price.
+2.	There are two types of products, the simple product and the discounted product. 
+	The price of the discounted product is the one entered divided by 2.
+3.	A cart must contain the list of products associated with it,
+	each product in the cart must have its corresponding quantity
+	(ex: Paint 6 units, cement 3 units, etc)
+	and a status, pending or completed as the case may be.
+
+The expected functionalities are the following:
+●	List of all products.
+● 	Add, remove and modify products.
+● 	List of all products in a cart.
+● 	Add, delete and modify products to the cart.
+● 	Checkout, you must return the final cost of the products in the cart
+	and change its status to completed.
